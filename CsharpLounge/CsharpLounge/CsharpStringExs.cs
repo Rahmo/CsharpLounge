@@ -23,9 +23,15 @@ namespace CsharpLounge
             string result2 = instance.ReverseSentence(strTest2); 
             Console.WriteLine(result2);
 
+            //Ex.3 check if string is palindrome 
+           
 
-
-
+            //Ex.4 Check if String contains Only Capital Charactars
+            string strcap1 = "Reeefe";
+            string strcap2 = "SWEET";
+            Console.WriteLine(strcap1+" capital check is "+instance.isCapitalOnly(strcap1) + " \n" + strcap2 +
+                " capital check is "+ instance.isCapitalOnly(strcap2));
+       
 
             Console.Read();
         }
@@ -54,6 +60,22 @@ namespace CsharpLounge
             return result; 
         }
 
-       
+
+        /// <summary>
+        /// Determines whether [is capital only] [for any given string].
+        /// the idea is to convert the str to char array and then check IsUpper from Char library for char in the array
+        /// </summary>
+        bool isCapitalOnly(string str)
+        {
+            char[] CharArray = str.ToCharArray();
+            for(int i = 0 ; i <= CharArray.Length -1 ;i++)
+            {
+                if (!Char.IsUpper(CharArray[i])) return false;
+            }
+         
+            return true; 
+        }
+
+
     }
 }
