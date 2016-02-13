@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace CsharpLounge
 {
     class CsharpStringExs
-    {//dd
+    {
         static void Main(string[] args)
         {
             //Setup 11
