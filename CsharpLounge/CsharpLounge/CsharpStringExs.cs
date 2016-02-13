@@ -4,6 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
+
+/// <summary>
+///  Created by Abdulrahman on 2016-1-19.
+/// </summary>
 namespace CsharpLounge
 {
     class CsharpStringExs
