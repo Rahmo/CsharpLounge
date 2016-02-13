@@ -10,7 +10,7 @@ namespace CsharpLounge
     {
         static void Main(string[] args)
         {
-            //Setup
+            //Setup 11
             CsharpStringExs instance = new CsharpStringExs();
 
             //Ex.1
