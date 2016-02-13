@@ -24,7 +24,11 @@ namespace CsharpLounge
             Console.WriteLine(result2);
 
             //Ex.3 check if string is palindrome 
-           
+            string pan1 = "cocoococ";
+            string pan2 = "qqaabb";
+            Console.WriteLine(pan1 + " palindrome check is " + instance.isPalindrome(pan1) + " \n" + pan2 +
+               " palindrome check is " + instance.isPalindrome(pan2));
+
 
             //Ex.4 Check if String contains Only Capital Charactars
             string strcap1 = "Reeefe";
@@ -73,6 +77,35 @@ namespace CsharpLounge
                 if (!Char.IsUpper(CharArray[i])) return false;
             }
          
+            return true; 
+        }
+
+
+
+
+        /// <summary>
+        /// Determines whether the specified string is papalindrome. 
+        /// Converts the string into char array and refer to the start index to the end and compare consequetivly 
+        /// and make the for loop stop in the mid /2 
+        /// </summary>
+        /// <param name="str">The string.</param>
+        /// <returns><c>true</c> if the specified string is papalindrome; otherwise, <c>false</c>.</returns>
+/        bool isPalindrome(string str)
+        {
+            if (str == null)
+            {
+                return false;
+            }
+
+            char[] strChar = str.ToCharArray();
+            for (int i = 0; i <= strChar.Length  / 2 ; i++)
+            {
+                if (strChar[i] != strChar[strChar.Length - i - 1])
+                {
+                    return false; 
+                }
+            }
+
             return true; 
         }
 
