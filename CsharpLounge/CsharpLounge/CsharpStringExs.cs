@@ -13,15 +13,19 @@ namespace CsharpLounge
             //Setup 11
             CsharpStringExs instance = new CsharpStringExs();
 
-            //Ex.1
+            //Ex.1  Reverse a word Charactrers 
             string strTest = "Rahmo";
             string result = instance.ReverseString(strTest);
             Console.WriteLine(result);
 
-            //Ex.2
+            //Ex.2 Reverse the words in a sentence 
             String strTest2 = "Hello, It's me ;)";
             string result2 = instance.ReverseSentence(strTest2); 
             Console.WriteLine(result2);
+
+
+
+
 
             Console.Read();
         }
