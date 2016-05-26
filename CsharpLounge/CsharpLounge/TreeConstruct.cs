@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +10,8 @@ namespace CsharpLounge
 {
     class Node
     {
-       
+     
+        
             public string value;
             public Node left;
             public Node right;
@@ -67,31 +69,24 @@ namespace CsharpLounge
             static public string result = ReconstructFromTreeToString(tree);
 
            static string ReconstructFromTreeToString(Node root)
-           {
-
-            
+           { 
              string result = "";
                if (root == null)
                {
                    return "";
-               }
-
-              
+               }  
                else
                {
 
                 int temp;
-                   int temp2; 
-                   bool isChildPrint = true;
-
-          string rootval = root.value;
-                Node Current = root; 
-                   string result1 = ReconstructFromTreeToString(Current.left);
-                   string result2; 
                   
-                     result2 = Current.value;
-                
-                string result3 = ReconstructFromTreeToString(Current.right);
+                   bool isChildPrint = true;
+                   string rootval = root.value;
+                   Node Current = root; 
+
+                   string result1 = ReconstructFromTreeToString(Current.left);
+                   string  result2 = Current.value;
+                   string result3 = ReconstructFromTreeToString(Current.right);
 
 
                    if (int.TryParse(result1, out temp) && int.TryParse(result3, out temp))
@@ -101,10 +96,8 @@ namespace CsharpLounge
                    if (result1 != "" && result3 != "" && isChildPrint == false )
                    {
 
-
                        result = "(" + result1 + result2 + result3 + ")";
-                   }
-                   
+                   }                   
                    else 
                    {
                     result = result1 + result2 + result3;

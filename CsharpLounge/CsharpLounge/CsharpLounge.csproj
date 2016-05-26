@@ -44,11 +44,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CsharpStringExs.cs" />
+    <Compile Include="ExcOnline1.cs" />
+    <Compile Include="LinkedListLoung.cs" />
+    <Compile Include="General.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TreeConstruct.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Other\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

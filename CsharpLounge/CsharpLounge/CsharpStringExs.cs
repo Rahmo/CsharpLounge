@@ -1,12 +1,12 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
-
-
+using System.Xml.Schema;
 
 
 /// <summary>
@@ -16,12 +16,31 @@ namespace CsharpLounge
 {
     class CsharpStringExs
     {//1
+      
+      public void run() { 
+            int num = 6;
+            for (int i = 1; i <= num; i++)
+            {
+                for (int j = 1; j <= num; j++)
 
-        static void Main(string[] args)
-        {
+                {
+                    if ((i + j) > num)
+                    {
 
-            //Setup 11
-            CsharpStringExs instance = new CsharpStringExs();
+                        Console.Write("#");
+                    }
+                    else
+                    {
+                        Console.Write(" ");
+                    }
+
+                }
+                Console.WriteLine();
+
+            }
+        
+        //Setup 11
+        CsharpStringExs instance = new CsharpStringExs();
 
             //Ex.1  Reverse a word Charactrers 
             string strTest = "Rahmo";
@@ -38,8 +57,7 @@ namespace CsharpLounge
             string pan2 = "qqaabb";
             Console.WriteLine(pan1 + " palindrome check is " + instance.isPalindrome(pan1) + " \n" + pan2 +
                               " palindrome check is " + instance.isPalindrome(pan2));
-
-
+            
             //Ex.4 Check if String contains Only Capital Charactars
             string strcap1 = "Reeefe";
             string strcap2 = "SWEET";
@@ -57,7 +75,7 @@ namespace CsharpLounge
 
             Console.WriteLine(Solution.result);
 
-            int[] arr = {1,2,3,3,2,1,3};
+            int[] arr = {1,2,3,3,2,1,3}; 
             Console.WriteLine(" the Number Occurring Odd Number of Times " + instance.findNumberOccuringOdd(arr));
 
 
@@ -65,9 +83,147 @@ namespace CsharpLounge
             //string Rahm = "Rssmoo";
             Console.WriteLine(" isUnique check  " + instance.isUniqueChar(Rahm));
 
+            string perm1 = "sumit";
+            string perm2 = "tiums";
+            Console.WriteLine(" Permutation check  " + instance.CheckPermutation(perm1, perm2));
 
-            Console.Read();
+
+           
+            string UrlFyMe = "12   f";
+            Console.WriteLine(" Permutation check  " + instance.urlfy(UrlFyMe,5));
+
+            // Example Check if the first letter is capital in a typcal word 
+            string Testword = "rahmo";
+            Console.WriteLine(CheckCab(Testword).ToString() + " Check cab resultss");
+
+
+            LinkedList<int> list = new LinkedList<int>();
+            list.AddLast(1);
+            list.AddLast(2);
+            list.AddLast(3);
+            list.AddLast(4);
+            list.AddLast(5);
+ 
+
+            int n = Console.Read();
+            Console.WriteLine(n);
+            for (int i = 0 ; i <= n; i++ )
+            {
+                int FirstSide = Console.Read();
+                int SecondSide = Console.Read();
+                int ThirdSide = Console.Read();
+                if (FirstSide == SecondSide && FirstSide == ThirdSide)
+                {
+                    Console.WriteLine("Equilateral");
+                }
+                else if (FirstSide == SecondSide || FirstSide == ThirdSide)
+                {
+                    Console.WriteLine("Isosceles");
+                }
+                else
+                {
+                    Console.WriteLine("None of these");
+                }
+            }
+
+
+            Console.WriteLine(" the list conents  " + list.Last.Value.ToString());
+            //135789
+            ListNode listNode = new ListNode(1);
+            listNode.AddToTail(2);
+            listNode.AddToTail(3);
+            listNode.AddToTail(4);
+            listNode.AddToTail(5);
+            listNode.AddToTail(6);
+
+            ListNode listNode2 = new ListNode(1);
+            listNode2.AddToTail(2);
+            listNode2.AddToTail(3);
+
+
+            ListNode OddevenNode = listNode.reversell(listNode);
+             OddevenNode = listNode.OddEvenList(listNode);
+
+            while (OddevenNode.next != null)
+            {
+                
+                Console.WriteLine(OddevenNode.val.ToString());
+                if (OddevenNode.next != null)
+                {
+                    OddevenNode = OddevenNode.next; 
+                }
+               
+            }
+
+  
+               
+            Console.ReadLine();
         }
+        //  public class ListNode
+        //  {
+        //public int val;
+        //public ListNode next;
+        //public ListNode(int x) { val = x; }
+
+        //      public void printvals(ListNode n)
+        //      {
+        //          if (n == null) return ;
+        //          while (n.next != null)
+        //          {
+        //              Console.WriteLine(n.val);
+        //          }
+        //      }
+        //  }
+        //public Node OddEvenList(LinkedList<int> head)
+        //{
+            
+
+        //}
+        string urlfy(string UrlChars, int length)
+        {
+
+    
+            //1 ) finding the proper size of the string by counting the spaces 
+            int spaces = 0, newlength , i ;
+            for (i = 0 ; i < length; i++)
+
+                if ( UrlChars[i].ToString() == " " )
+                {
+                    spaces++;
+                }
+            newlength = length + spaces * 2 ; 
+
+
+
+            return  spaces.ToString(); 
+        }
+
+        /// <summary>
+        /// 1) Sort the chac of the string using Array.sort() 
+        /// 2) check if the two string are equal afetr the sort 
+        /// </summary>
+        /// <param name="s1"></param>
+        /// <param name="s2"></param>
+        /// <returns></returns>
+        bool CheckPermutation(string s1, string s2)
+        {
+            if (s1.Length != s2.Length)
+            return false;
+            return  SortArrayChar(s1).Equals(SortArrayChar(s2));
+        }
+        // Helper methid for the permutation checing example
+       public string SortArrayChar(string str)
+        {
+            if (str.Length <= 0 ) return "";
+
+            
+            char[] CharStr = str.ToCharArray();
+            //This will sort according to the chr value from small to big 
+            Array.Sort(CharStr);
+
+            return new string(CharStr);
+        }
+
 
         bool isUniqueChar(string s)
         {
@@ -185,6 +341,24 @@ namespace CsharpLounge
             }
 
             return true; 
+        }
+
+        /// <summary>
+        /// This methos checks if the word has a first char as a prober upper case. 
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public bool CheckCab(string str)
+        {
+            if (str == "") return false;
+            char[] CharStr = str.ToCharArray();
+
+            if (Char.IsUpper(CharStr[0]))
+            {
+                return true;
+            }
+
+            return false; 
         }
 
         public int findNumberOccuringOdd(int[] arr)
