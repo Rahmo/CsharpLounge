@@ -19,7 +19,9 @@ namespace CsharpLounge.Other
 
             // Strings examples 
             CsharpStringExs csharpStringExs = new CsharpStringExs();
-            csharpStringExs.run();
+           csharpStringExs.run();
+            NumberExs instance = new NumberExs();
+            instance.run();
 
         }
     }
